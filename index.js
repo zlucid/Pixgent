@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const colors = require('colors');
 const path = require('path');
+const fs = require('fs');
 let achyDB = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, './database')
@@ -20,6 +21,24 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   res.render('index')
+})
+
+app.get('/photos', (req, res) => {
+  let photos = [];
+  fs.readdir('./database', (err, files) => {
+    files.forEach(file => {
+      photos.push(`http://localhost:3000/uploads/${file}`)
+    })
+    res.send(photos)
+  })
+})
+
+app.post('/', multer({ storage: achyDB }).single('achy'), (req, res) => {
+  if (req.file) {
+    res.end(`Successful! \nYour photo has been successfully uploaded to the system! \n/uploads/${req.file.filename}`)
+  } else {
+    res.end('Please upload a photo!')
+  }
 })
 
 app.get('/uploads/:name', (req, res) => {

@@ -1,15 +1,21 @@
-# achyStorage
+
+#  achyStorage
 
 This website has been shared publicly by stachy#8769.
 
+# Updates
 
-# Info
+- In the past, when you press the upload button without adding a photo to the site, the application was closed. This issue has now been removed.
+- You will now be able to see all the photo links added to the site when you type **/photos.**
+
+#  Info
 
 What is this website and what's it for?
 
 This website is a small file loading site. It's just a little bit more productive right now. So it's basically beta. If the app grows, new things will be added.
 
-# Upload File
+#  Upload File
+
 ![achyStorage](https://i.hizliresim.com/je1pt56.png)
 
 You have to pick a picture of our own from the "Pick a file" section, and then you have to press the button to upload it on the site.
