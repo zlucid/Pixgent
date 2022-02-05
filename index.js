@@ -27,7 +27,7 @@ app.get('/photos', (req, res) => {
   let photos = [];
   fs.readdir('./database', (err, files) => {
     files.forEach(file => {
-      photos.push(`http://localhost:3000/uploads/${file}`)
+      photos.push(`https://achystorage.herokuapp.com//uploads/${file}`)
     })
     res.send(photos)
   })
