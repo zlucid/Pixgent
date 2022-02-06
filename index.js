@@ -33,24 +33,6 @@ app.get('/photos', (req, res) => {
   })
 })
 
-let cooldown = {};
-app.post('/', multer({ storage: achyDB }).single('achy'), (req, res) => {
-  if (cooldown[req.ip]) {
-    res.end(`Please wait 30 seconds!`)
-    if (req.file) {
-      fs.unlink(req.file.path, (err) => {
-        if (err) throw err;
-      })
-    }
-  } else {
-    cooldown[req.ip] = true;
-    setTimeout(() => {
-      delete cooldown[req.ip]
-    }, 30000)
-    res.end(`Successful! \nYour photo has been successfully uploaded to the system! \n/uploads/${req.file.filename}`)
-  }
-})
-
 app.post('/', multer({ storage: achyDB }).single('achy'), (req, res) => {
   if (req.file) {
     res.end(`Successful! \nYour photo has been successfully uploaded to the system! \n/uploads/${req.file.filename}`)
