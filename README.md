@@ -1,17 +1,17 @@
 
 #  achyStorage
 
-This website has been shared publicly by stachy#8769.
+This website has been shared publicly by ***stachy#8769.***
 
-# Updates
+#  Updates
 
-- In the past, when you press the upload button without adding a photo to the site, the application was closed. This issue has now been removed.
-- You will now be able to see all the photo links added to the site when you type **/photos.**
+- Added cooldown to add photos. **(30 seconds)** [06.02.2022]
+-  In the past, when you press the upload button without adding a photo to the site, the application was closed. This issue has now been removed. [05.02.2022]
+-  You will now be able to see all the photo links added to the site when you type **/photos.** [05.02.2022]
 
 #  Info
 
 What is this website and what's it for?
-
 This website is a small file loading site. It's just a little bit more productive right now. So it's basically beta. If the app grows, new things will be added.
 
 #  Upload File
