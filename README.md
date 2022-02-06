@@ -5,7 +5,6 @@ This website has been shared publicly by ***stachy#8769.***
 
 #  Updates
 
-- Added cooldown to add photos. **(30 seconds)** [06.02.2022]
 -  In the past, when you press the upload button without adding a photo to the site, the application was closed. This issue has now been removed. [05.02.2022]
 -  You will now be able to see all the photo links added to the site when you type **/photos.** [05.02.2022]
 
