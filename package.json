@@ -12,12 +12,12 @@
     "colors": "^1.4.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "express-rate-limit": "^6.2.0",
     "fs": "^0.0.1-security",
     "multer": "^1.4.4",
     "path": "^0.12.7",
     "wio.db": "^4.0.22"
   },
-  "devDependencies": {},
   "description": "This website has been shared publicly by stachy#8769.",
   "repository": {
     "type": "git",

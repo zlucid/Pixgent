@@ -6,6 +6,7 @@ const multer = require('multer');
 const colors = require('colors');
 const path = require('path');
 const fs = require('fs');
+const limit = require('express-rate-limit');
 let achyDB = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, './database')
@@ -15,11 +16,19 @@ let achyDB = multer.diskStorage({
   }
 })
 
+let achyLimiter = limit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: 'Too many requests from this IP, please try again in 15 minutes',
+  standardHeaders: true,
+  legacyHeaders: false,
+})
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/', achyLimiter, (req, res) => {
   res.render('index')
 })
 
@@ -33,7 +42,7 @@ app.get('/photos', (req, res) => {
   })
 })
 
-app.post('/', multer({ storage: achyDB }).single('achy'), (req, res) => {
+app.post('/', multer({ storage: achyDB }).single('achy'), achyLimiter, (req, res) => {
   if (req.file) {
     res.end(`Successful! \nYour photo has been successfully uploaded to the system! \n/uploads/${req.file.filename}`)
   } else {
@@ -45,7 +54,7 @@ app.get('/uploads/:name', (req, res) => {
   res.sendFile(path.join(__dirname, 'database', req.params.name))
 })
 
-app.post('/', function (req, res) {
+app.post('/', achyLimiter, function (req, res) {
   let upload = multer({
     storage: achyDB,
     fileFilter: function (req, file, callback) {
