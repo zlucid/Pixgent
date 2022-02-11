@@ -5,6 +5,7 @@ This website has been shared publicly by ***stachy#8769.***
 
 #  Updates
 
+- Minor bugs fixed. [11.02.2022]
 - Rate limit added. If you try to upload more than 5 photos to the site, it will assign a 15-minute ratelimit to your IP address. [07.02.2022]
 -  In the past, when you press the upload button without adding a photo to the site, the application was closed. This issue has now been removed. [05.02.2022]
 -  You will now be able to see all the photo links added to the site when you type **/photos.** [05.02.2022]
