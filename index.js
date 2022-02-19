@@ -49,17 +49,6 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 })
 
-
-app.get('/data', (req, res) => {
-    let photos = [];
-    fs.readdir('./database', (err, files) => {
-        files.forEach(file => {
-            photos.push(`https://achystorage.iodxdev.repl.co/uploads/${file}`)
-        })
-        res.send(photos)
-    })
-})
-
 app.post('/', multer({ storage: achyDB }).single('achy'), achyLimiter, (req, res) => {
     if (req.file) {
         res.end(`Successful! \nYour photo has been successfully uploaded to the system! \n/uploads/${req.file.filename}`)
