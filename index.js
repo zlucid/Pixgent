@@ -31,14 +31,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', achyLimiter, (req, res) => {
-    fetch('https://v1.nocodeapi.com/stachy/uptime/uYPwlPweLXmxmbxF?monitors=790567942').then(res => res.json()).then(data => {
-        let status = data.monitors[0].status;
-        if (status == 2) {
-            res.render('index', { status: 'Online' });
-        } else {
-            res.render('index', { status: 'Offline' });
-        }
-    })
+    res.render('index', { status: 'Online' });
 })
 
 app.get('/about', (req, res) => {
@@ -77,4 +70,4 @@ app.post('/', achyLimiter, function(req, res) {
     })
 })
 
-app.listen(3000, console.log(`[SYSTEM] Website live!`.green))
+app.listen(1292, console.log(`[SYSTEM] Website live!`.green))
