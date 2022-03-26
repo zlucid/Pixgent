@@ -1,7 +1,4 @@
-
-  
-
-# achyStorage
+# Pixgent
 
   
 
@@ -44,7 +41,7 @@ This website is a small file loading site. It's just a little bit more productiv
 
   
 
-![achyStorage](https://i.hizliresim.com/h19gd2o.png)
+![Pixgent](https://i.hizliresim.com/rmgi8xt.png)
 
   
 
@@ -52,7 +49,7 @@ You have to pick a picture of our own from the "Pick a file" section, and then y
 
   
 
-![achyStorage](https://i.hizliresim.com/78tko5u.png)
+![Pixgent](https://i.hizliresim.com/78tko5u.png)
 
   
 
